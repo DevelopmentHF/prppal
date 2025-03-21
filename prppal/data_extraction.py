@@ -13,9 +13,9 @@ def extract(filepath_args):
     merged_df = pd.merge(patrol_df, awards_df, on="Member ID", how="inner")
 
     # Example Analysis: Total hours per member
-    total_hours = merged_df.groupby("Member ID")["Member Hours"].sum()
+    total_hours = patrol_df.groupby("Member ID")["Member Hours"].sum()
     print(total_hours)
 
     # Example: Count of awards per member
-    awards_count = awards_df.groupby("Member ID")["Award Name"].count()
-    print(awards_count)
+    #awards_count = awards_df.groupby("Member ID")["Award Name"].count()
+    #print(awards_count)
