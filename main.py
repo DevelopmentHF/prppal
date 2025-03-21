@@ -6,7 +6,7 @@ from prppal.console import console
 
 def main():
     
-    console.print(Text("Starting prppal...\n", style="bold green"))
+    console.log(Text("Started prppal...\n", style="green"))
 
     parser = argparse.ArgumentParser(description="Add file names to perform PRP analysis on.")
     parser.add_argument("--patrols", type=str, help=".csv file containing patrolling data")
@@ -14,8 +14,7 @@ def main():
 
     args = parser.parse_args()
 
-    extract(args)
-    analyse()
+    analyse(extract(args))
 
 
 if __name__ == "__main__":
