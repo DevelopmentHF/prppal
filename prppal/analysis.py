@@ -29,6 +29,9 @@ def analyse(dfs):
     # If a member is a rookie, they are not a grommet
     grommet_members_df = grommet_members_df[~grommet_members_df['Member ID'].isin(rookie_members_df['Member ID'])]
 
+    # If a member is a jaffa, they are not a rookie
+    rookie_members_df = rookie_members_df[~rookie_members_df['Member ID'].isin(jaffa_members_df['Member ID'])]
+
     # display grommets info
     console.log(f"Number of [bold]Grommets[/bold]: {len(grommet_members_df)}\n", style="green")
     console.log("Found [bold]Grommet[/bold] members with the following Member IDs:\n", style="green")
